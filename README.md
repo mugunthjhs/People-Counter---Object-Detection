@@ -4,9 +4,7 @@ This project demonstrates a people counter using **Python** and **YOLO v8** for 
 
 ## Output Video Preview
 
-![People Counter Output](https://github.com/mugunthjhs/People-Counter---Object-Detection/blob/main/output_people_tracking.gif)
-
-Alternatively, you can view the full video [here](https://github.com/mugunthjhs/People-Counter---Object-Detection/blob/main/output_people_tracking.mp4).
+[![People Counter Output](https://img.youtube.com/vi/563b1824-baf3-48e4-87cf-141ce0ddc692/0.jpg)](https://github.com/user-attachments/assets/563b1824-baf3-48e4-87cf-141ce0ddc692)
 
 ## Purpose
 
