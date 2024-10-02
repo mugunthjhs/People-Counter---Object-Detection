@@ -39,6 +39,15 @@ limitsdown = [527, 489, 735, 489]
 totalCountup = []
 totalCountdown = []
 
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+# Define the codec and create a VideoWriter object
+output_video_path = "output_people_tracking.mp4"
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for .mp4 files
+out = cv2.VideoWriter(output_video_path, fourcc, fps, (frame_width, frame_height))
+
 while True:
     success, img = cap.read()
     
@@ -125,6 +134,7 @@ while True:
     cv2.putText(img,str(len(totalCountup)),(929,345),cv2.FONT_HERSHEY_PLAIN,5,(139,195,75),7)
     cv2.putText(img,str(len(totalCountdown)),(1191,345),cv2.FONT_HERSHEY_PLAIN,5,(50,50,230),7)
     
+    out.write(img)
     
     cv2.imshow("Image", img)
     #cv2.imshow("ImageRegion", imgRegion)
@@ -135,4 +145,5 @@ while True:
 
 # Release resources
 cap.release()
+out.release()
 cv2.destroyAllWindows()
